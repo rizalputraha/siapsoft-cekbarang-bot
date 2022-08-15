@@ -17,6 +17,20 @@ var knex = require('knex')({
     }
 });
 
+const dateNow = () => {
+    const d_t = new Date();
+ 
+    let year = d_t.getFullYear();
+    let month = ("0" + (d_t.getMonth() + 1)).slice(-2);
+    let day = ("0" + d_t.getDate()).slice(-2);
+    let hour = d_t.getHours();
+    let minute = d_t.getMinutes();
+    let seconds = d_t.getSeconds();
+
+    // prints date & time in YYYY-MM-DD HH:MM:SS format
+    return "["+year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + seconds+ "] :";
+}
+
 //SiapBintangTeknik
 cron.schedule("*/10 * * * *", async () => {
     try {
@@ -27,6 +41,7 @@ cron.schedule("*/10 * * * *", async () => {
         })
         if (query.length > 0) {
             bot.telegram.sendMessage("-672619963", message);
+            console.log(dateNow() + message);
         }
     } catch (error) {
         bot.telegram.sendMessage("-672619963", "Something Went Wrong Please Check Code !");
