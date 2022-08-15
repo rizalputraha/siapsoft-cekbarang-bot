@@ -1,0 +1,18 @@
+{
+  "name": "siapbot-cekbarang",
+  "version": "1.0.0",
+  "description": "bot telegram for checking query",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "knex": "^2.2.0",
+    "mssql": "^9.0.0",
+    "node-cron": "^3.0.1",
+    "telegraf": "^4.8.6"
+  }
+}
